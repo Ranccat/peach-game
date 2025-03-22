@@ -12,7 +12,8 @@ public class MapManager : MonoBehaviour
 
 	public void Init()
 	{
-		int[] randomArray = NumberGenerator.GenerateRandomNumbers(170, 7);
+		int difficulty = GameData.Difficulty;
+		int[] randomArray = NumberGenerator.GenerateRandomNumbers(170, difficulty);
 		Shuffler.Shuffle(randomArray);
 
 		float currentWidth = 0f;
