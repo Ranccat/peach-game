@@ -84,7 +84,7 @@ public class BoxDrawer : MonoBehaviour
 				continue;
 
 			score++;
-			Destroy(obj.gameObject);
+			peach.OnCollected();
 		}
 
 		GameManager.Instance.AddScore(score);
