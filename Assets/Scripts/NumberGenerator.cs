@@ -32,6 +32,18 @@ public static class NumberGenerator
             int count = Math.Min(counts[ran], total);
             total -= count;
 
+            // "count" can be 1 when total is 1.
+            // this case, get the last index number and split it into half
+            if (count == 1)
+            {
+                int last = result[idx - 1];
+                int a = last / 2 + 1; // make sure 0 is not made
+                int b = last - a;
+                result[idx - 1] = a;
+                result[idx] = b;
+                break;
+            }
+
             List<int> list = new List<int>();
             while (list.Count < count - 1)
             {
